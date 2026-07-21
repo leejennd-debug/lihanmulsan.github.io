@@ -1,0 +1,540 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>리한물산 | 건설현장 전문 욕실용 시멘트 공급</title>
+<meta name="description" content="타일 탈락, 누수, 균열 걱정 없는 고강도 욕실용 시멘트. 전국 건설현장에 435개 이상 납품한 리한물산의 검증된 자재를 만나보세요.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Noto+Sans+KR:wght@400;500;700;900&display=swap" rel="stylesheet">
+<style>
+  :root{
+    --dark:#3F4A2B;
+    --dark2:#2E3620;
+    --olive:#9CAF54;
+    --olive-light:#E7EDCB;
+    --gold:#F2C14E;
+    --white:#FFFFFF;
+    --text:#2A2A2A;
+    --grey:#6E6E6E;
+    --card-bg:#F7F8F2;
+    --red-acc:#C0562F;
+    --radius:16px;
+    --max:1160px;
+  }
+  *{box-sizing:border-box; margin:0; padding:0;}
+  html{scroll-behavior:smooth;}
+  body{
+    font-family:'Noto Sans KR','Malgun Gothic','Apple SD Gothic Neo',sans-serif;
+    color:var(--text);
+    line-height:1.6;
+    background:var(--white);
+    -webkit-font-smoothing:antialiased;
+  }
+  img,svg{display:block; max-width:100%;}
+  a{color:inherit; text-decoration:none;}
+  ul{list-style:none;}
+  .wrap{max-width:var(--max); margin:0 auto; padding:0 24px;}
+  section{padding:88px 0;}
+  h1,h2,h3{line-height:1.35;}
+  .eyebrow{
+    display:inline-flex; align-items:center; gap:8px;
+    background:var(--olive-light); color:var(--dark);
+    font-size:14px; font-weight:700; padding:8px 16px; border-radius:999px;
+    margin-bottom:20px;
+  }
+  .section-head{max-width:640px; margin:0 auto 52px; text-align:center;}
+  .section-head h2{font-size:34px; font-weight:900; color:var(--text);}
+  .section-head p{margin-top:14px; color:var(--grey); font-size:16px;}
+  .btn{
+    display:inline-flex; align-items:center; justify-content:center; gap:8px;
+    padding:16px 30px; border-radius:10px; font-weight:700; font-size:16px;
+    cursor:pointer; border:2px solid transparent; transition:transform .15s ease, box-shadow .15s ease, background .15s ease;
+    white-space:nowrap;
+  }
+  .btn:active{transform:translateY(1px);}
+  .btn-primary{background:var(--gold); color:var(--dark2);}
+  .btn-primary:hover{box-shadow:0 10px 24px rgba(242,193,78,.45); transform:translateY(-2px);}
+  .btn-outline{background:transparent; border-color:rgba(255,255,255,.55); color:var(--white);}
+  .btn-outline:hover{background:rgba(255,255,255,.12);}
+  .btn-dark-outline{background:transparent; border-color:var(--dark); color:var(--dark);}
+  .btn-dark-outline:hover{background:var(--dark); color:var(--white);}
+
+  /* ---------- Header ---------- */
+  header{
+    position:sticky; top:0; z-index:100;
+    background:rgba(255,255,255,.92); backdrop-filter:blur(8px);
+    border-bottom:1px solid rgba(0,0,0,.06);
+  }
+  .nav{display:flex; align-items:center; justify-content:space-between; height:76px;}
+  .logo{font-size:22px; font-weight:900; color:var(--dark); letter-spacing:-.5px;}
+  .logo span{color:var(--olive);}
+  .nav-links{display:flex; align-items:center; gap:36px; font-weight:500; font-size:15px;}
+  .nav-links a{color:var(--text); position:relative; padding:6px 0;}
+  .nav-links a:hover{color:var(--dark);}
+  .nav-cta{display:flex; align-items:center; gap:14px;}
+  .nav-cta .btn{padding:11px 22px; font-size:14px;}
+  .nav-cta .btn-dark-outline{border-color:var(--olive); color:var(--dark);}
+  .hamburger{display:none; flex-direction:column; gap:5px; cursor:pointer; padding:8px; background:none; border:none;}
+  .hamburger span{width:24px; height:2.5px; background:var(--dark); border-radius:2px; transition:.2s;}
+  .mobile-panel{display:none; flex-direction:column; gap:2px; padding:12px 24px 20px; border-top:1px solid rgba(0,0,0,.06);}
+  .mobile-panel a{padding:14px 4px; font-weight:600; border-bottom:1px solid rgba(0,0,0,.05);}
+  .mobile-panel .btn{margin-top:14px;}
+  header.open .mobile-panel{display:flex;}
+
+  /* ---------- Hero ---------- */
+  .hero{
+    background:linear-gradient(155deg, var(--dark) 0%, var(--dark2) 65%, #232a17 100%);
+    color:var(--white); position:relative; overflow:hidden; padding:100px 0 0;
+  }
+  .hero .wrap{display:grid; grid-template-columns:1.05fr .95fr; gap:40px; align-items:center; position:relative; z-index:2;}
+  .hero-eyebrow{
+    display:inline-flex; align-items:center; gap:8px; background:rgba(242,193,78,.15);
+    color:var(--gold); border:1px solid rgba(242,193,78,.35);
+    font-size:13px; font-weight:700; padding:8px 16px; border-radius:999px; margin-bottom:24px;
+  }
+  .hero h1{font-size:46px; font-weight:900; letter-spacing:-1px;}
+  .hero h1 em{font-style:normal; color:var(--gold);}
+  .hero p.lead{margin-top:22px; font-size:17px; color:#DDE3C7; max-width:520px;}
+  .hero-actions{display:flex; gap:14px; margin-top:36px; flex-wrap:wrap;}
+  .hero-visual{position:relative; height:420px;}
+  .hero-tile-grid{position:absolute; inset:0; display:grid; grid-template-columns:repeat(3,1fr); grid-template-rows:repeat(3,1fr); gap:10px; transform:rotate(-6deg) scale(1.08);}
+  .hero-tile-grid div{background:rgba(156,175,84,.22); border:1px solid rgba(231,237,203,.25); border-radius:10px;}
+  .hero-tile-grid div:nth-child(3n+2){background:rgba(242,193,78,.18);}
+  .hero-tile-grid div:nth-child(5){background:var(--olive); border-color:var(--olive);}
+  .hero-badge{
+    position:absolute; background:var(--white); color:var(--dark); border-radius:14px;
+    padding:16px 20px; box-shadow:0 18px 40px rgba(0,0,0,.35); font-weight:700;
+  }
+  .hero-badge .num{font-size:26px; font-weight:900; color:var(--dark2);}
+  .hero-badge .lbl{font-size:12.5px; color:var(--grey); font-weight:500; margin-top:2px;}
+  .hero-badge.b1{top:6%; left:0;}
+  .hero-badge.b2{bottom:10%; right:2%;}
+  .hero-bottom-fade{height:70px; background:var(--white); margin-top:60px; border-radius:60% 60% 0 0/100% 100% 0 0;}
+
+  /* ---------- Stats bar ---------- */
+  .stats{background:var(--olive-light); padding:0;}
+  .stats .wrap{display:grid; grid-template-columns:repeat(4,1fr); gap:0; padding:0 24px;}
+  .stat-item{padding:44px 20px; text-align:center; border-right:1px solid rgba(63,74,43,.12);}
+  .stat-item:last-child{border-right:none;}
+  .stat-item .num{font-size:32px; font-weight:900; color:var(--dark);}
+  .stat-item .lbl{margin-top:6px; font-size:13.5px; color:#5b6547; font-weight:500;}
+
+  /* ---------- Features ---------- */
+  .features{background:var(--white);}
+  .feature-grid{display:grid; grid-template-columns:repeat(3,1fr); gap:26px;}
+  .feature-card{
+    background:var(--card-bg); border:1px solid var(--olive-light); border-radius:var(--radius);
+    padding:34px 28px; transition:transform .18s ease, box-shadow .18s ease;
+  }
+  .feature-card:hover{transform:translateY(-6px); box-shadow:0 18px 34px rgba(63,74,43,.14);}
+  .feature-icon{width:56px; height:56px; border-radius:50%; background:var(--olive); display:flex; align-items:center; justify-content:center; margin-bottom:18px;}
+  .feature-icon svg{width:26px; height:26px;}
+  .feature-card h3{font-size:19px; font-weight:700; margin-bottom:10px;}
+  .feature-card p{font-size:14.5px; color:var(--grey);}
+
+  /* ---------- Partners ---------- */
+  .partners{background:var(--dark2); color:var(--white);}
+  .partners .section-head h2{color:var(--white);}
+  .partners .section-head p{color:#C7CDB1;}
+  .partner-grid{display:flex; flex-wrap:wrap; gap:12px; justify-content:center;}
+  .partner-chip{
+    background:rgba(255,255,255,.06); border:1px solid rgba(231,237,203,.2);
+    padding:12px 22px; border-radius:999px; font-weight:600; font-size:14.5px; color:#EDEFE0;
+  }
+
+  /* ---------- FAQ ---------- */
+  .faq{background:var(--white);}
+  .faq-list{max-width:780px; margin:0 auto;}
+  .faq-item{border-bottom:1px solid var(--olive-light);}
+  .faq-q{
+    width:100%; background:none; border:none; text-align:left; cursor:pointer;
+    display:flex; align-items:center; justify-content:space-between; gap:16px;
+    padding:24px 4px; font-size:16.5px; font-weight:700; color:var(--text);
+  }
+  .faq-q .plus{
+    flex:none; width:26px; height:26px; border-radius:50%; background:var(--olive-light); color:var(--dark);
+    display:flex; align-items:center; justify-content:center; font-size:18px; font-weight:900; transition:transform .2s ease;
+  }
+  .faq-item.open .plus{transform:rotate(45deg); background:var(--gold); color:var(--dark2);}
+  .faq-a{max-height:0; overflow:hidden; transition:max-height .25s ease;}
+  .faq-a p{padding:0 4px 24px; color:var(--grey); font-size:15px; max-width:680px;}
+  .faq-item.open .faq-a{max-height:460px;}
+
+  /* ---------- CTA ---------- */
+  .cta{
+    background:linear-gradient(120deg, var(--dark) 0%, #4a5834 100%);
+    color:var(--white); text-align:center; border-radius:28px; margin:0 24px;
+    padding:70px 30px;
+  }
+  .cta-inner{max-width:640px; margin:0 auto;}
+  .cta h2{font-size:32px; font-weight:900;}
+  .cta p{margin-top:16px; color:#DDE3C7; font-size:16px;}
+  .cta-actions{display:flex; gap:14px; justify-content:center; margin-top:32px; flex-wrap:wrap;}
+  .cta-phone{margin-top:22px; font-size:15px; color:var(--gold); font-weight:700;}
+
+  /* ---------- Footer ---------- */
+  footer{background:var(--dark2); color:#B9C09E; padding:56px 0 28px; margin-top:70px;}
+  .footer-grid{display:grid; grid-template-columns:1.3fr 1fr 1fr; gap:40px; padding-bottom:36px; border-bottom:1px solid rgba(255,255,255,.08);}
+  .footer-logo{font-size:20px; font-weight:900; color:var(--white); margin-bottom:14px;}
+  .footer-logo span{color:var(--olive);}
+  .footer-col h4{color:var(--white); font-size:14.5px; font-weight:700; margin-bottom:14px;}
+  .footer-col p, .footer-col a{display:block; font-size:14px; color:#B9C09E; margin-bottom:8px;}
+  .footer-bottom{padding-top:22px; font-size:12.5px; color:#8B9270; display:flex; justify-content:space-between; flex-wrap:wrap; gap:8px;}
+
+  /* ---------- Responsive ---------- */
+  @media (max-width:920px){
+    .nav-links, .nav-cta{display:none;}
+    .hamburger{display:flex;}
+    .hero .wrap{grid-template-columns:1fr; text-align:left;}
+    .hero-visual{height:280px; margin-top:20px;}
+    .hero h1{font-size:36px;}
+    .stats .wrap{grid-template-columns:repeat(2,1fr);}
+    .stat-item{border-right:none; border-bottom:1px solid rgba(63,74,43,.12);}
+    .feature-grid{grid-template-columns:repeat(2,1fr);}
+    .footer-grid{grid-template-columns:1fr; gap:28px;}
+  }
+  @media (max-width:600px){
+    section{padding:64px 0;}
+    .wrap{padding:0 18px;}
+    .section-head h2{font-size:27px;}
+    .hero{padding-top:24px;}
+    .hero h1{font-size:30px;}
+    .hero p.lead{font-size:15.5px;}
+    .hero-actions .btn{width:100%;}
+    .hero-actions{flex-direction:column;}
+    .feature-grid{grid-template-columns:1fr;}
+    .stats .wrap{grid-template-columns:repeat(2,1fr); padding:0 12px;}
+    .stat-item{padding:28px 10px;}
+    .stat-item .num{font-size:24px;}
+    .cta{margin:0 14px; padding:48px 20px; border-radius:20px;}
+    .cta h2{font-size:24px;}
+    .cta-actions .btn{width:100%;}
+    .cta-actions{flex-direction:column;}
+    .hero-badge{padding:12px 14px;}
+    .hero-badge .num{font-size:20px;}
+  }
+</style>
+</head>
+<body>
+
+<header id="siteHeader">
+  <div class="wrap nav">
+    <a href="#top" class="logo">리한<span>물산</span></a>
+    <nav class="nav-links">
+      <a href="#features">제품특징</a>
+      <a href="#partners">시공실적</a>
+      <a href="#faq">FAQ</a>
+      <a href="#cta">문의하기</a>
+    </nav>
+    <div class="nav-cta">
+      <a href="#cta" class="btn btn-dark-outline">견적 문의</a>
+    </div>
+    <button class="hamburger" id="hamburgerBtn" aria-label="메뉴 열기">
+      <span></span><span></span><span></span>
+    </button>
+  </div>
+  <div class="mobile-panel" id="mobilePanel">
+    <a href="#features">제품특징</a>
+    <a href="#partners">시공실적</a>
+    <a href="#faq">FAQ</a>
+    <a href="#cta">문의하기</a>
+    <a href="#cta" class="btn btn-primary">견적 문의하기</a>
+  </div>
+</header>
+
+<main id="top">
+
+  <!-- ================= HERO ================= -->
+  <section class="hero">
+    <div class="wrap">
+      <div>
+        <span class="hero-eyebrow">건설현장 전문 자재 공급사</span>
+        <h1>타일이 <em>들뜨지 않는 힘</em>,<br>리한물산 욕실용 시멘트</h1>
+        <p class="lead">습식 공간의 타일 탈락·균열·누수는 준공 후 클레임의 첫 번째 원인입니다. 리한물산은 고강도·고접착 욕실 전용 시멘트로 전국 건설현장 500곳 이상에 자재를 공급하며 현장에서 성능을 검증받았습니다.</p>
+        <div class="hero-actions">
+          <a href="#cta" class="btn btn-primary">견적 문의하기</a>
+          <a href="#features" class="btn btn-outline">제품 특징 보기</a>
+        </div>
+      </div>
+      <div class="hero-visual">
+        <div class="hero-tile-grid">
+          <div></div><div></div><div></div>
+          <div></div><div></div><div></div>
+          <div></div><div></div><div></div>
+        </div>
+        <div class="hero-badge b1">
+          <div class="num">435+</div>
+          <div class="lbl">2025년 납품 현장</div>
+        </div>
+        <div class="hero-badge b2">
+          <div class="num">10+</div>
+          <div class="lbl">대형 건설사 파트너</div>
+        </div>
+      </div>
+    </div>
+    <div class="hero-bottom-fade"></div>
+  </section>
+
+  <!-- ================= STATS ================= -->
+  <section class="stats" style="padding:0;">
+    <div class="wrap">
+      <div class="stat-item">
+        <div class="num">435+</div>
+        <div class="lbl">2025년 납품 현장수</div>
+      </div>
+      <div class="stat-item">
+        <div class="num">158+</div>
+        <div class="lbl">2026년 상반기 납품 현장수</div>
+      </div>
+      <div class="stat-item">
+        <div class="num">10+</div>
+        <div class="lbl">국내 주요 건설사 거래</div>
+      </div>
+      <div class="stat-item">
+        <div class="num">KS L 1592</div>
+        <div class="lbl">규격 기준 충족 제품</div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ================= FEATURES ================= -->
+  <section class="features" id="features">
+    <div class="wrap">
+      <div class="section-head">
+        <span class="eyebrow">PRODUCT FEATURES</span>
+        <h2>현장이 먼저 알아보는 성능</h2>
+        <p>욕실·화장실 등 상시 습식 환경에 맞춰 설계된 전용 시멘트로, 일반 시멘트가 검증하지 않는 항목까지 꼼꼼히 확인했습니다.</p>
+      </div>
+      <div class="feature-grid">
+        <div class="feature-card">
+          <div class="feature-icon">
+            <svg viewBox="0 0 48 48" fill="none"><rect x="6" y="6" width="16" height="16" rx="3" fill="#fff"/><rect x="26" y="6" width="16" height="16" rx="3" fill="#fff" opacity="0.6"/><rect x="6" y="26" width="16" height="16" rx="3" fill="#fff" opacity="0.6"/><rect x="26" y="26" width="16" height="16" rx="3" fill="#fff"/></svg>
+          </div>
+          <h3>강력한 타일 접착력</h3>
+          <p>탄탄한 부착 성능으로 타일 탈락·들뜸 하자를 근본적으로 줄여줍니다. 준공 후 유지보수 클레임 걱정을 덜어드립니다.</p>
+        </div>
+        <div class="feature-card">
+          <div class="feature-icon">
+            <svg viewBox="0 0 48 48" fill="none"><path d="M24 6C24 6 12 22 12 30C12 36.6 17.4 42 24 42C30.6 42 36 36.6 36 30C36 22 24 6 24 6Z" fill="#fff"/></svg>
+          </div>
+          <h3>우수한 방수 성능</h3>
+          <p>낮은 흡수율로 습기 침투와 곰팡이 발생 위험을 최소화합니다. 욕실·화장실처럼 상시 물이 닿는 공간에 최적화되어 있습니다.</p>
+        </div>
+        <div class="feature-card">
+          <div class="feature-icon">
+            <svg viewBox="0 0 48 48" fill="none"><rect x="6" y="16" width="36" height="16" rx="4" fill="#fff"/><rect x="12" y="16" width="3" height="9" fill="#9CAF54"/><rect x="20" y="16" width="3" height="13" fill="#9CAF54"/><rect x="28" y="16" width="3" height="9" fill="#9CAF54"/></svg>
+          </div>
+          <h3>낮은 균열 위험</h3>
+          <p>온·습도 변화에도 안정적인 낮은 길이변화율로 시공 후 미세균열과 마감 뒤틀림 위험을 줄여줍니다.</p>
+        </div>
+        <div class="feature-card">
+          <div class="feature-icon">
+            <svg viewBox="0 0 48 48" fill="none"><path d="M6 24 Q13 12 20 24 T34 24 T42 24" stroke="#fff" stroke-width="4.5" fill="none" stroke-linecap="round"/></svg>
+          </div>
+          <h3>뛰어난 시공성</h3>
+          <p>우수한 보수율로 시공 중 급격한 수분 손실을 막아 작업 시간 확보와 안정적인 경화가 가능합니다.</p>
+        </div>
+        <div class="feature-card">
+          <div class="feature-icon">
+            <svg viewBox="0 0 48 48" fill="none"><circle cx="24" cy="24" r="18" fill="#fff"/><path d="M16 24 L21 30 L33 17" stroke="#9CAF54" stroke-width="4" fill="none" stroke-linecap="round" stroke-linejoin="round"/></svg>
+          </div>
+          <h3>KS 규격 기준 충족</h3>
+          <p>국가표준 KS L 1592:2024 기준에 맞춰 개발·생산되는 제품으로, 안정적인 품질관리 기준을 적용하고 있습니다.</p>
+        </div>
+        <div class="feature-card">
+          <div class="feature-icon">
+            <svg viewBox="0 0 48 48" fill="none"><rect x="4" y="18" width="24" height="14" rx="2" fill="#fff"/><path d="M28 22H36L42 28V32H28V22Z" fill="#fff" opacity="0.8"/><circle cx="14" cy="34" r="4" fill="#9CAF54"/><circle cx="34" cy="34" r="4" fill="#9CAF54"/></svg>
+          </div>
+          <h3>전국 현장 납품</h3>
+          <p>현장 일정에 맞춘 신속한 자재 공급으로 공사 지연 없이 원하는 시점에 받아보실 수 있습니다.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ================= PARTNERS ================= -->
+  <section class="partners" id="partners">
+    <div class="wrap">
+      <div class="section-head">
+        <span class="eyebrow" style="background:rgba(242,193,78,.15); color:var(--gold);">TRACK RECORD</span>
+        <h2>전국 500개 이상 현장이 선택했습니다</h2>
+        <p>국내 주요 건설사들의 아파트·오피스텔·공공시설 현장에 리한물산 욕실용 시멘트가 납품되고 있습니다.</p>
+      </div>
+      <div class="partner-grid">
+        <span class="partner-chip">GS건설</span>
+        <span class="partner-chip">현대건설</span>
+        <span class="partner-chip">대우건설</span>
+        <span class="partner-chip">롯데건설</span>
+        <span class="partner-chip">DL이앤씨</span>
+        <span class="partner-chip">포스코이앤씨</span>
+        <span class="partner-chip">SK건설</span>
+        <span class="partner-chip">한화건설</span>
+        <span class="partner-chip">코오롱글로벌</span>
+        <span class="partner-chip">호반건설</span>
+        <span class="partner-chip">두산건설</span>
+        <span class="partner-chip">금호건설</span>
+        <span class="partner-chip">현대산업개발</span>
+        <span class="partner-chip">계룡건설</span>
+        <span class="partner-chip">우미건설</span>
+        <span class="partner-chip">그 외 다수</span>
+      </div>
+    </div>
+  </section>
+
+  <!-- ================= FAQ ================= -->
+  <section class="faq" id="faq">
+    <div class="wrap">
+      <div class="section-head">
+        <span class="eyebrow">FAQ</span>
+        <h2>자주 묻는 질문</h2>
+        <p>거래를 검토 중이신 담당자분들이 많이 문의하시는 내용을 정리했습니다.</p>
+      </div>
+      <div class="faq-list">
+        <div class="faq-item open">
+          <button class="faq-q">
+            <span>최소 주문 수량(MOQ)과 배송비는 어떻게 되나요?</span>
+            <span class="plus">+</span>
+          </button>
+          <div class="faq-a"><p>18kg(20L/pail) 단위로 공급되며, 30개 미만 주문 시 운임비가 별도로 부과되고 30개 이상 주문하시면 무료배송으로 지원해 드립니다. 현장 규모에 맞게 소량부터 대량까지 유연하게 대응합니다.</p></div>
+        </div>
+        <div class="faq-item">
+          <button class="faq-q">
+            <span>제품 한 통(pail)으로 어느 정도 시공할 수 있나요?</span>
+            <span class="plus">+</span>
+          </button>
+          <div class="faq-a"><p>18kg(20L) 1통 기준 물 4.5~5.0kg을 배합하면 양변기 기준 약 30개 이내 시공이 가능합니다. 현장 여건에 따라 실제 소요량은 달라질 수 있습니다.</p></div>
+        </div>
+        <div class="faq-item">
+          <button class="faq-q">
+            <span>배합 비율과 사용 방법이 궁금합니다.</span>
+            <span class="plus">+</span>
+          </button>
+          <div class="faq-a"><p>물 혼합비 25%(W/M) 기준으로 3분 이상 충분히 교반한 뒤 사용합니다. 혼합 후에는 60분 이내 사용을 권장하며, 스펙 기준 최대 작업 가능 시간은 90분입니다.</p></div>
+        </div>
+        <div class="faq-item">
+          <button class="faq-q">
+            <span>시공 후 양생 기간은 얼마나 필요한가요?</span>
+            <span class="plus">+</span>
+          </button>
+          <div class="faq-a"><p>시공 직후 1일 이상은 접촉·충격·사용을 피해야 하며, 20℃·습도 60% 기준 최소 3일간 양생 기간을 확보해야 합니다. 시공 후 최소 5일간은 동결되지 않도록 보호가 필요합니다.</p></div>
+        </div>
+        <div class="faq-item">
+          <button class="faq-q">
+            <span>겨울철 저온 현장에서도 시공할 수 있나요?</span>
+            <span class="plus">+</span>
+          </button>
+          <div class="faq-a"><p>사용 가능 온도는 +5℃~+30℃입니다. 5℃ 이하 환경에서 시공이 필요하시면 반드시 사전에 저희와 협의해 주세요.</p></div>
+        </div>
+        <div class="faq-item">
+          <button class="faq-q">
+            <span>어떤 부위에 사용할 수 있나요?</span>
+            <span class="plus">+</span>
+          </button>
+          <div class="faq-a"><p>양변기·세면기·욕조 마감 충진·고정, 위생도기 및 타일 줄눈(메지) 부위 방수 등 충진·접착·방수가 필요한 다양한 욕실 시공에 사용됩니다. 물 이외의 이물질(시멘트, 모래, 타사 제품 등)은 혼합하지 않아야 합니다.</p></div>
+        </div>
+        <div class="faq-item">
+          <button class="faq-q">
+            <span>하자보증이 되나요?</span>
+            <span class="plus">+</span>
+          </button>
+          <div class="faq-a">
+            <p>반영구적 품질을 기본으로 하며, 저희 직영 시공 시 최소 3년간 하자를 보증해 드립니다. 단, 배합비·양생조건·사용온도 등 제품 시공 매뉴얼을 준수하지 않고 시공한 경우에는 하자보증이 제한될 수 있습니다.</p>
+            <div style="margin-top:-8px; padding:0 4px 24px; max-width:680px; font-size:12.5px; color:#9a9a9a; line-height:1.7;">
+              ※ 아래의 경우는 제품 결함이 아닌 시공상 원인으로 판단되어 보증이 제한될 수 있습니다.<br>
+              &nbsp;&nbsp;- 프라이머 도포가 필요한 바탕면에 프라이머를 생략하고 시공한 경우<br>
+              &nbsp;&nbsp;- 양생 기간 중 위생도기(양변기 등)가 흔들리거나 움직인 경우<br>
+              &nbsp;&nbsp;- 시공자의 숙련도 등 개인 편차에 의한 부착 불량<br>
+              &nbsp;&nbsp;- 하자 원인이 불분명한 경우
+            </div>
+          </div>
+        </div>
+        <div class="faq-item">
+          <button class="faq-q">
+            <span>세금계산서 및 거래명세서 발행이 되나요?</span>
+            <span class="plus">+</span>
+          </button>
+          <div class="faq-a"><p>모든 거래에 대해 세금계산서와 거래명세서를 정상 발행해 드리며, 현장별 발주 이력도 별도 요청 시 확인해 드립니다.</p></div>
+        </div>
+        <div class="faq-item">
+          <button class="faq-q">
+            <span>견적은 어떻게 받을 수 있나요?</span>
+            <span class="plus">+</span>
+          </button>
+          <div class="faq-a"><p>하단 문의하기 버튼을 통해 현장명, 필요 수량, 희망 납기를 남겨주시면 담당자가 확인 후 빠르게 연락드립니다.</p></div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ================= CTA ================= -->
+  <section id="cta" style="padding-top:0;">
+    <div class="cta">
+      <div class="cta-inner">
+        <h2>현장에 맞는 견적, 지금 문의하세요</h2>
+        <p>현장명과 필요 수량만 남겨주시면 담당자가 빠르게 맞춤 견적을 안내해 드립니다.</p>
+        <div class="cta-actions">
+          <a href="tel:027022620" class="btn btn-primary">전화로 문의하기</a>
+          <a href="mailto:rihan02311@naver.com" class="btn btn-outline">이메일로 문의하기</a>
+        </div>
+        <div class="cta-phone">TEL. 02-702-2620 · 평일 09:00 - 18:00</div>
+      </div>
+    </div>
+  </section>
+
+</main>
+
+<footer>
+  <div class="wrap">
+    <div class="footer-grid">
+      <div>
+        <div class="footer-logo">리한<span>물산</span></div>
+        <p style="max-width:280px;">건설현장 전문 욕실용 시멘트 공급사, 리한물산입니다. 전국 500개 이상 현장에서 검증된 자재로 안전한 시공을 지원합니다.</p>
+      </div>
+      <div class="footer-col">
+        <h4>회사정보</h4>
+        <p>상호 : 리한물산</p>
+        <p>대표자 : 한유정</p>
+        <p>사업자등록번호 : 749-23-02311</p>
+        <p>주소 : 서울특별시 용산구 백범로79다길 35</p>
+      </div>
+      <div class="footer-col">
+        <h4>고객문의</h4>
+        <a href="tel:027022620">TEL. 02-702-2620</a>
+        <p>FAX. 02-702-2630</p>
+        <a href="mailto:rihan02311@naver.com">rihan02311@naver.com</a>
+        <p>평일 09:00 - 18:00 (주말·공휴일 휴무)</p>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      <span>ⓒ 2026 리한물산. All rights reserved.</span>
+      <span>본 웹사이트의 제품 정보는 자사 기준이며, 현장 조건에 따라 시공 결과가 달라질 수 있습니다.</span>
+    </div>
+  </div>
+</footer>
+
+<script>
+  // Mobile nav toggle
+  const headerEl = document.getElementById('siteHeader');
+  const hamburgerBtn = document.getElementById('hamburgerBtn');
+  hamburgerBtn.addEventListener('click', () => {
+    headerEl.classList.toggle('open');
+  });
+  document.querySelectorAll('.mobile-panel a').forEach(a => {
+    a.addEventListener('click', () => headerEl.classList.remove('open'));
+  });
+
+  // FAQ accordion
+  document.querySelectorAll('.faq-item').forEach(item => {
+    const q = item.querySelector('.faq-q');
+    q.addEventListener('click', () => {
+      const isOpen = item.classList.contains('open');
+      document.querySelectorAll('.faq-item').forEach(i => i.classList.remove('open'));
+      if (!isOpen) item.classList.add('open');
+    });
+  });
+</script>
+
+</body>
+</html>
