@@ -5,6 +5,11 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>리한물산 | 건설현장 전문 욕실용 시멘트 공급</title>
 <meta name="description" content="타일 탈락, 누수, 균열 걱정 없는 고강도 욕실용 시멘트. 전국 건설현장에 435개 이상 납품한 리한물산의 검증된 자재를 만나보세요.">
+<link rel="canonical" href="https://rihanmulsan.co.kr/">
+<!-- 네이버 서치어드바이저에서 발급받은 코드로 아래 content 값을 교체하세요 -->
+<meta name="naver-site-verification" content="b8e4dd93981c5c6b37e5a3acef2ab8894f54525f">
+<!-- 구글 서치콘솔에서 발급받은 코드로 아래 content 값을 교체하세요 -->
+<meta name="google-site-verification" content="여기에_구글에서_받은_코드_입력">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+KR:wght@400;500;700;900&display=swap" rel="stylesheet">
@@ -46,7 +51,7 @@
   }
   .section-head{max-width:640px; margin:0 auto 52px; text-align:center;}
   .section-head h2{font-size:34px; font-weight:900; color:var(--text);}
-  .section-head p{margin-top:14px; color:var(--grey); font-size:16px;}
+  .section-head p{margin-top:14px; color:var(--grey); font-size:16px; word-break:keep-all; text-wrap:balance;}
   .btn{
     display:inline-flex; align-items:center; justify-content:center; gap:8px;
     padding:16px 30px; border-radius:10px; font-weight:700; font-size:16px;
@@ -99,27 +104,68 @@
   .hero p.lead{margin-top:22px; font-size:17px; color:#DDE3C7; max-width:520px;}
   .hero-actions{display:flex; gap:14px; margin-top:36px; flex-wrap:wrap;}
   .hero-visual{position:relative; height:420px;}
-  .hero-tile-grid{position:absolute; inset:0; display:grid; grid-template-columns:repeat(3,1fr); grid-template-rows:repeat(3,1fr); gap:10px; transform:rotate(-6deg) scale(1.08);}
-  .hero-tile-grid div{background:rgba(156,175,84,.22); border:1px solid rgba(231,237,203,.25); border-radius:10px;}
-  .hero-tile-grid div:nth-child(3n+2){background:rgba(242,193,78,.18);}
-  .hero-tile-grid div:nth-child(5){background:var(--olive); border-color:var(--olive);}
-  .hero-badge{
-    position:absolute; background:var(--white); color:var(--dark); border-radius:14px;
-    padding:16px 20px; box-shadow:0 18px 40px rgba(0,0,0,.35); font-weight:700;
+  .hero-tile-grid{
+    position:absolute; inset:0; display:grid; grid-template-columns:repeat(3,1fr); grid-template-rows:repeat(3,1fr); gap:12px;
+    transform:rotate(-6deg) scale(1.08);
+    filter:drop-shadow(0 30px 50px rgba(0,0,0,.35));
   }
-  .hero-badge .num{font-size:26px; font-weight:900; color:var(--dark2);}
-  .hero-badge .lbl{font-size:12.5px; color:var(--grey); font-weight:500; margin-top:2px;}
-  .hero-badge.b1{top:6%; left:0;}
-  .hero-badge.b2{bottom:10%; right:2%;}
-  .hero-bottom-fade{height:70px; background:var(--white); margin-top:60px; border-radius:60% 60% 0 0/100% 100% 0 0;}
+  .hero-tile-grid .tile{
+    position:relative; border-radius:12px; display:flex; align-items:center; justify-content:center;
+    background:linear-gradient(135deg, rgba(231,237,203,.20), rgba(156,175,84,.32));
+    border:1px solid rgba(231,237,203,.3);
+    box-shadow:inset 0 1px 0 rgba(255,255,255,.2), 0 8px 18px rgba(0,0,0,.2);
+  }
+  .hero-tile-grid .tile-gold{
+    background:linear-gradient(135deg, rgba(242,193,78,.38), rgba(242,193,78,.12));
+    border-color:rgba(242,193,78,.45);
+  }
+  .hero-tile-grid .tile-solid{
+    background:linear-gradient(135deg, var(--olive), #7c9143);
+    border-color:var(--olive);
+    box-shadow:inset 0 1px 0 rgba(255,255,255,.3), 0 10px 22px rgba(0,0,0,.28);
+  }
+  .hero-tile-grid .tile-outline{
+    background:rgba(255,255,255,.05);
+    border:1.5px dashed rgba(242,193,78,.55);
+  }
+  .hero-tile-grid .tile-icon{width:30px; height:30px;}
+  .hero-badge{
+    position:absolute; display:flex; align-items:center; gap:14px;
+    background:var(--white); color:var(--dark); border-radius:16px;
+    padding:18px 22px; box-shadow:0 22px 45px rgba(0,0,0,.4), 0 0 0 1px rgba(242,193,78,.3);
+    font-weight:700;
+  }
+  .hero-badge .badge-icon{
+    flex:none; width:44px; height:44px; border-radius:12px; background:var(--gold);
+    display:flex; align-items:center; justify-content:center;
+  }
+  .hero-badge .badge-icon svg{width:22px; height:22px;}
+  .hero-badge .num{font-size:30px; font-weight:900; color:var(--dark2); line-height:1;}
+  .hero-badge .lbl{font-size:12.5px; color:var(--grey); font-weight:600; margin-top:4px;}
+  .hero-badge.b1{top:4%; left:-4%;}
+  .hero-badge.b1 .num{font-size:36px;}
+  .hero-badge.b2{bottom:8%; right:-2%;}
+  .hero-wave{position:relative; margin-top:40px; line-height:0;}
+  .hero-wave svg{display:block; width:100%; height:90px;}
 
   /* ---------- Stats bar ---------- */
-  .stats{background:var(--olive-light); padding:0;}
-  .stats .wrap{display:grid; grid-template-columns:repeat(4,1fr); gap:0; padding:0 24px;}
-  .stat-item{padding:44px 20px; text-align:center; border-right:1px solid rgba(63,74,43,.12);}
-  .stat-item:last-child{border-right:none;}
-  .stat-item .num{font-size:32px; font-weight:900; color:var(--dark);}
-  .stat-item .lbl{margin-top:6px; font-size:13.5px; color:#5b6547; font-weight:500;}
+  .stats{background:var(--olive-light); padding:56px 0;}
+  .stats .wrap{display:grid; grid-template-columns:repeat(4,1fr); gap:20px; padding:0 24px;}
+  .stat-item{
+    background:var(--white); border-radius:16px; padding:32px 18px; text-align:center;
+    box-shadow:0 10px 26px rgba(63,74,43,.14); border:1px solid rgba(255,255,255,.7);
+    transition:transform .2s ease, box-shadow .2s ease;
+  }
+  .stat-item:hover{transform:translateY(-6px); box-shadow:0 18px 36px rgba(63,74,43,.22);}
+  .stat-icon{
+    width:48px; height:48px; margin:0 auto 14px; border-radius:12px;
+    background:linear-gradient(135deg, var(--dark), #5a6a3d);
+    display:flex; align-items:center; justify-content:center;
+  }
+  .stat-icon svg{width:24px; height:24px;}
+  .stat-item .num{font-size:32px; font-weight:900; color:var(--dark); position:relative; display:inline-block;}
+  .stat-item .num::after{content:''; position:absolute; left:50%; bottom:-8px; transform:translateX(-50%); width:26px; height:4px; border-radius:2px; background:var(--gold);}
+  .stat-item .lbl{margin-top:16px; font-size:13.5px; color:#5b6547; font-weight:600;}
 
   /* ---------- Features ---------- */
   .features{background:var(--white);}
@@ -141,7 +187,31 @@
   .partner-grid{display:flex; flex-wrap:wrap; gap:12px; justify-content:center;}
   .partner-chip{
     background:rgba(255,255,255,.06); border:1px solid rgba(231,237,203,.2);
-    padding:12px 22px; border-radius:999px; font-weight:600; font-size:14.5px; color:#EDEFE0;
+    padding:16px 26px; font-weight:600; font-size:14.5px; color:#EDEFE0;
+    display:inline-block; animation:chipFloat 3.6s ease-in-out infinite; will-change:transform;
+    transition:transform .2s ease, background .2s ease, border-color .2s ease;
+    border-radius:63% 37% 54% 46% / 43% 37% 63% 57%;
+  }
+  .partner-chip:hover{
+    animation-play-state:paused; transform:translateY(-5px) scale(1.06);
+    background:rgba(242,193,78,.16); border-color:rgba(242,193,78,.55); color:var(--white);
+  }
+  .partner-chip:nth-child(4n+1){border-radius:63% 37% 54% 46% / 43% 37% 63% 57%;}
+  .partner-chip:nth-child(4n+2){border-radius:42% 58% 65% 35% / 55% 45% 55% 45%;}
+  .partner-chip:nth-child(4n+3){border-radius:58% 42% 35% 65% / 40% 60% 40% 60%;}
+  .partner-chip:nth-child(4n){border-radius:48% 52% 60% 40% / 60% 45% 55% 40%;}
+  .partner-chip:nth-child(2n){animation-duration:4.2s; animation-delay:.3s;}
+  .partner-chip:nth-child(3n){animation-duration:3.9s; animation-delay:.6s;}
+  .partner-chip:nth-child(4n){animation-delay:.9s;}
+  .partner-chip:nth-child(5n){animation-duration:4.5s; animation-delay:.2s;}
+  .partner-chip:nth-child(7n){animation-duration:4.8s; animation-delay:1.1s;}
+  @keyframes chipFloat{
+    0%{transform:translateY(0);}
+    50%{transform:translateY(-8px);}
+    100%{transform:translateY(0);}
+  }
+  @media (prefers-reduced-motion: reduce){
+    .partner-chip{animation:none;}
   }
 
   /* ---------- FAQ ---------- */
@@ -191,7 +261,6 @@
     .hero-visual{height:280px; margin-top:20px;}
     .hero h1{font-size:36px;}
     .stats .wrap{grid-template-columns:repeat(2,1fr);}
-    .stat-item{border-right:none; border-bottom:1px solid rgba(63,74,43,.12);}
     .feature-grid{grid-template-columns:repeat(2,1fr);}
     .footer-grid{grid-template-columns:1fr; gap:28px;}
   }
@@ -205,15 +274,21 @@
     .hero-actions .btn{width:100%;}
     .hero-actions{flex-direction:column;}
     .feature-grid{grid-template-columns:1fr;}
-    .stats .wrap{grid-template-columns:repeat(2,1fr); padding:0 12px;}
-    .stat-item{padding:28px 10px;}
-    .stat-item .num{font-size:24px;}
+    .stats{padding:36px 0;}
+    .stats .wrap{grid-template-columns:repeat(2,1fr); padding:0 12px; gap:12px;}
+    .stat-item{padding:22px 10px;}
+    .stat-icon{width:38px; height:38px; margin-bottom:10px;}
+    .stat-icon svg{width:19px; height:19px;}
+    .stat-item .num{font-size:22px;}
     .cta{margin:0 14px; padding:48px 20px; border-radius:20px;}
     .cta h2{font-size:24px;}
     .cta-actions .btn{width:100%;}
     .cta-actions{flex-direction:column;}
-    .hero-badge{padding:12px 14px;}
+    .hero-badge{padding:12px 14px; gap:10px;}
+    .hero-badge .badge-icon{width:34px; height:34px; border-radius:9px;}
+    .hero-badge .badge-icon svg{width:17px; height:17px;}
     .hero-badge .num{font-size:20px;}
+    .hero-badge.b1 .num{font-size:22px;}
   }
 </style>
 </head>
@@ -260,39 +335,67 @@
       </div>
       <div class="hero-visual">
         <div class="hero-tile-grid">
-          <div></div><div></div><div></div>
-          <div></div><div></div><div></div>
-          <div></div><div></div><div></div>
+          <div class="tile"></div>
+          <div class="tile tile-gold"></div>
+          <div class="tile"></div>
+          <div class="tile"></div>
+          <div class="tile tile-solid">
+            <svg class="tile-icon" viewBox="0 0 24 24" fill="none"><path d="M5 13l4 4L19 7" stroke="#fff" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"/></svg>
+          </div>
+          <div class="tile"></div>
+          <div class="tile tile-outline">
+            <svg class="tile-icon" viewBox="0 0 24 24" fill="none"><path d="M12 3C12 3 6 11 6 15C6 18.3 8.7 21 12 21C15.3 21 18 18.3 18 15C18 11 12 3 12 3Z" fill="#F2C14E"/></svg>
+          </div>
+          <div class="tile tile-gold"></div>
+          <div class="tile"></div>
         </div>
         <div class="hero-badge b1">
-          <div class="num">435+</div>
-          <div class="lbl">2025년 납품 현장</div>
+          <div class="badge-icon">
+            <svg viewBox="0 0 24 24" fill="none"><path d="M3 21h18M5 21V10l7-6 7 6v11M9 21v-6h6v6" stroke="#3F4A2B" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>
+          </div>
+          <div>
+            <div class="num">435+</div>
+            <div class="lbl">2025년 납품 현장</div>
+          </div>
         </div>
         <div class="hero-badge b2">
-          <div class="num">10+</div>
-          <div class="lbl">대형 건설사 파트너</div>
+          <div class="badge-icon">
+            <svg viewBox="0 0 24 24" fill="none"><rect x="3" y="7" width="7" height="14" rx="1" stroke="#3F4A2B" stroke-width="2"/><rect x="14" y="3" width="7" height="18" rx="1" stroke="#3F4A2B" stroke-width="2"/></svg>
+          </div>
+          <div>
+            <div class="num">10+</div>
+            <div class="lbl">대형 건설사 파트너</div>
+          </div>
         </div>
       </div>
     </div>
-    <div class="hero-bottom-fade"></div>
+    <div class="hero-wave">
+      <svg viewBox="0 0 1200 120" preserveAspectRatio="none" xmlns="http://www.w3.org/2000/svg">
+        <path d="M0,60 C100,20 200,20 300,55 C400,90 500,90 600,55 C700,20 800,20 900,55 C1000,90 1100,90 1200,55 L1200,120 L0,120 Z" fill="#E7EDCB"></path>
+      </svg>
+    </div>
   </section>
 
   <!-- ================= STATS ================= -->
   <section class="stats" style="padding:0;">
     <div class="wrap">
       <div class="stat-item">
-        <div class="num">435+</div>
+        <div class="stat-icon"><svg viewBox="0 0 24 24" fill="none"><path d="M3 21h18M5 21V10l7-6 7 6v11M9 21v-6h6v6" stroke="#fff" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg></div>
+        <div class="num" data-count="435" data-suffix="+">0+</div>
         <div class="lbl">2025년 납품 현장수</div>
       </div>
       <div class="stat-item">
-        <div class="num">158+</div>
+        <div class="stat-icon"><svg viewBox="0 0 24 24" fill="none"><rect x="3" y="5" width="18" height="16" rx="2" stroke="#fff" stroke-width="2"/><path d="M3 9h18M8 3v4M16 3v4" stroke="#fff" stroke-width="2" stroke-linecap="round"/></svg></div>
+        <div class="num" data-count="158" data-suffix="+">0+</div>
         <div class="lbl">2026년 상반기 납품 현장수</div>
       </div>
       <div class="stat-item">
-        <div class="num">10+</div>
+        <div class="stat-icon"><svg viewBox="0 0 24 24" fill="none"><rect x="3" y="7" width="7" height="14" rx="1" stroke="#fff" stroke-width="2"/><rect x="14" y="3" width="7" height="18" rx="1" stroke="#fff" stroke-width="2"/></svg></div>
+        <div class="num" data-count="10" data-suffix="+">0+</div>
         <div class="lbl">국내 주요 건설사 거래</div>
       </div>
       <div class="stat-item">
+        <div class="stat-icon"><svg viewBox="0 0 24 24" fill="none"><circle cx="12" cy="12" r="9" stroke="#fff" stroke-width="2"/><path d="M8 12l2.5 2.5L16 9" stroke="#fff" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg></div>
         <div class="num">KS L 1592</div>
         <div class="lbl">규격 기준 충족 제품</div>
       </div>
@@ -534,6 +637,33 @@
       if (!isOpen) item.classList.add('open');
     });
   });
+
+  // Stat count-up animation
+  const statNums = document.querySelectorAll('.stat-item .num[data-count]');
+  if (statNums.length) {
+    const animateNum = (el) => {
+      const target = parseInt(el.getAttribute('data-count'), 10);
+      const suffix = el.getAttribute('data-suffix') || '';
+      const duration = 1200;
+      const start = performance.now();
+      const step = (now) => {
+        const progress = Math.min((now - start) / duration, 1);
+        const eased = 1 - Math.pow(1 - progress, 3);
+        el.textContent = Math.round(eased * target) + suffix;
+        if (progress < 1) requestAnimationFrame(step);
+      };
+      requestAnimationFrame(step);
+    };
+    const statObserver = new IntersectionObserver((entries) => {
+      entries.forEach(entry => {
+        if (entry.isIntersecting) {
+          animateNum(entry.target);
+          statObserver.unobserve(entry.target);
+        }
+      });
+    }, { threshold: 0.5 });
+    statNums.forEach(el => statObserver.observe(el));
+  }
 </script>
 
 </body>
