@@ -68,9 +68,11 @@
   .btn{
     display:inline-flex; align-items:center; justify-content:center; gap:8px;
     padding:15px 28px; border-radius:var(--radius); font-weight:600; font-size:15.5px;
-    cursor:pointer; border:1.5px solid transparent; transition:background .15s ease, border-color .15s ease, color .15s ease;
+    cursor:pointer; border:1.5px solid transparent; transition:background .15s ease, border-color .15s ease, color .15s ease, transform .15s ease;
     white-space:nowrap;
   }
+  .btn:hover{transform:translateY(-1px);}
+  .btn:active{transform:translateY(0);}
   .btn-primary{background:var(--blue); color:var(--white);}
   .btn-primary:hover{background:var(--blue-hover);}
   .btn-outline-ink{background:transparent; border-color:var(--ink); color:var(--ink);}
@@ -80,11 +82,21 @@
 
   /* ---------- Logo ---------- */
   .logo-lockup{display:flex; align-items:center; gap:12px;}
-  .logo-img{height:24px; width:auto; flex:none;}
+  .logo-img{height:24px; width:auto; flex:none; transition:transform .2s ease;}
+  .logo-lockup:hover .logo-img{transform:scale(1.04);}
   .logo-divider{width:1px; height:16px; background:var(--steel); opacity:.4;}
   .logo-kr{font-size:14px; font-weight:500; color:var(--steel-text); word-break:keep-all;}
   .logo-lockup.on-dark .logo-divider{background:rgba(242,237,228,.3); opacity:1;}
   .logo-lockup.on-dark .logo-kr{color:rgba(242,237,228,.55);}
+
+  /* ---------- Scroll reveal ---------- */
+  .reveal{opacity:0; transform:translateY(18px); transition:opacity .9s ease, transform .9s ease;}
+  .reveal.in{opacity:1; transform:translateY(0);}
+  @media (prefers-reduced-motion: reduce){
+    .reveal{opacity:1; transform:none; transition:none;}
+    .btn, .logo-img, .feature-card, .partner-chip{transition:none;}
+    .btn:hover, .feature-card:hover, .partner-chip:hover{transform:none;}
+  }
 
   /* ---------- Header ---------- */
   header{
@@ -94,8 +106,13 @@
   }
   .nav{display:flex; align-items:center; justify-content:space-between; height:76px;}
   .nav-links{display:flex; align-items:center; gap:34px; font-weight:500; font-size:15px;}
-  .nav-links a{color:var(--ink); opacity:.75; transition:opacity .15s ease;}
+  .nav-links a{color:var(--ink); opacity:.75; position:relative; transition:opacity .15s ease;}
+  .nav-links a::after{
+    content:''; position:absolute; left:0; bottom:-3px; width:0; height:1.5px;
+    background:var(--blue); transition:width .2s ease;
+  }
   .nav-links a:hover{opacity:1;}
+  .nav-links a:hover::after{width:100%;}
   .nav-cta .btn{padding:11px 22px; font-size:14px;}
   .hamburger{display:none; flex-direction:column; gap:5px; cursor:pointer; padding:8px; background:none; border:none;}
   .hamburger span{width:22px; height:1.5px; background:var(--ink);}
@@ -110,6 +127,33 @@
   .hero h1{font-size:46px; letter-spacing:-.5px;}
   .hero p.lead{margin-top:22px; font-size:17px; color:var(--steel-text); max-width:500px;}
   .hero-actions{display:flex; gap:14px; margin-top:36px; flex-wrap:wrap;}
+  .hero .eyebrow, .hero h1, .hero p.lead, .hero-actions{
+    opacity:0; transform:translateY(12px); transition:opacity .8s ease, transform .8s ease;
+  }
+  .hero.in .eyebrow{transition-delay:.1s;}
+  .hero.in h1{transition-delay:.22s;}
+  .hero.in p.lead{transition-delay:.34s;}
+  .hero.in .hero-actions{transition-delay:.46s;}
+  .hero.in .eyebrow, .hero.in h1, .hero.in p.lead, .hero.in .hero-actions{opacity:1; transform:translateY(0);}
+  @media (prefers-reduced-motion: reduce){
+    .hero .eyebrow, .hero h1, .hero p.lead, .hero-actions{transition:none; opacity:1; transform:none;}
+  }
+
+  /* ---------- Intro splash ---------- */
+  .intro-screen{
+    position:fixed; inset:0; z-index:9999; background:var(--cream);
+    display:flex; flex-direction:column; align-items:center; justify-content:center; gap:26px;
+    transition:opacity .8s ease;
+  }
+  .intro-screen.hide{opacity:0; pointer-events:none;}
+  .intro-logo{height:clamp(64px,16vw,220px); width:auto; opacity:0; transform:translateY(10px); animation:introLogoIn .9s ease .3s forwards;}
+  .intro-hint{font-size:13px; color:var(--steel-text); letter-spacing:.04em; opacity:0; animation:introHintIn .9s ease 1.3s forwards;}
+  @keyframes introLogoIn{to{opacity:1; transform:translateY(0);}}
+  @keyframes introHintIn{to{opacity:.8;}}
+  body.intro-lock{overflow:hidden; height:100vh;}
+  @media (prefers-reduced-motion: reduce){
+    .intro-screen{display:none;}
+  }
 
   .hero-bottom{border-top:1px solid var(--steel-line); margin-top:64px; padding:28px 0;}
   .hero-bottom .wrap{display:flex; align-items:center; justify-content:space-between; flex-wrap:wrap; gap:12px;}
@@ -120,8 +164,13 @@
   .stats .wrap{display:grid; grid-template-columns:repeat(4,1fr);}
   .stat-item{padding:44px 24px; text-align:center; border-left:1px solid var(--steel-line);}
   .stat-item:first-child{border-left:none;}
-  .stat-item .num{font-size:30px; font-weight:700; color:var(--ink);}
+  .stat-item .num{font-size:30px; font-weight:700; color:var(--ink); position:relative; display:inline-block;}
   .stat-item .num em{font-style:normal; color:var(--blue);}
+  .stat-item .num::after{
+    content:''; position:absolute; left:0; bottom:-6px; width:0; height:2px;
+    background:var(--blue); transition:width .25s ease;
+  }
+  .stat-item:hover .num::after{width:100%;}
   .stat-item .lbl{margin-top:10px; font-size:13.5px; color:var(--steel-text);}
 
   /* ---------- Features ---------- */
@@ -129,13 +178,18 @@
   .feature-grid{display:grid; grid-template-columns:repeat(3,1fr); gap:20px;}
   .feature-card{
     background:var(--white); border:1px solid var(--steel-line); border-radius:var(--radius);
-    padding:30px 26px;
+    padding:30px 26px; transition:border-color .2s ease, transform .2s ease;
   }
+  .feature-card:hover{border-color:var(--blue); transform:translateY(-3px);}
   .feature-icon{
     width:44px; height:44px; border-radius:var(--radius); background:var(--blue-tint);
     display:flex; align-items:center; justify-content:center; margin-bottom:20px;
+    transition:background .2s ease;
   }
   .feature-icon svg{width:22px; height:22px;}
+  .feature-icon svg *{transition:stroke .2s ease;}
+  .feature-card:hover .feature-icon{background:var(--blue);}
+  .feature-card:hover .feature-icon svg *{stroke:#fff;}
   .feature-card h3{font-size:17.5px; margin-bottom:8px;}
   .feature-card p{font-size:14.5px; color:var(--steel-text);}
 
@@ -149,7 +203,9 @@
   .partner-chip{
     border:1px solid rgba(242,237,228,.2); border-radius:var(--radius);
     padding:12px 20px; font-weight:500; font-size:14px; color:rgba(242,237,228,.85);
+    transition:border-color .2s ease, color .2s ease, transform .2s ease;
   }
+  .partner-chip:hover{border-color:var(--blue-on-dark); color:var(--cream); transform:translateY(-2px);}
 
   /* ---------- FAQ ---------- */
   .faq{background:var(--white);}
@@ -218,6 +274,11 @@
 </head>
 <body>
 
+<div id="introScreen" class="intro-screen" aria-hidden="true">
+  <img src="logo/rihan-logo-ink.svg" alt="rihan" class="intro-logo">
+  <div class="intro-hint">스크롤하여 시작하기</div>
+</div>
+
 <header id="siteHeader">
   <div class="wrap nav">
     <a href="#top" class="logo-lockup">
@@ -270,19 +331,19 @@
   <!-- ================= STATS ================= -->
   <section class="stats">
     <div class="wrap">
-      <div class="stat-item">
+      <div class="stat-item reveal">
         <div class="num"><em>435+</em></div>
         <div class="lbl">2025년 납품 현장수</div>
       </div>
-      <div class="stat-item">
+      <div class="stat-item reveal">
         <div class="num"><em>158+</em></div>
         <div class="lbl">2026년 상반기 납품 현장수</div>
       </div>
-      <div class="stat-item">
+      <div class="stat-item reveal">
         <div class="num"><em>10+</em></div>
         <div class="lbl">국내 주요 건설사 거래</div>
       </div>
-      <div class="stat-item">
+      <div class="stat-item reveal">
         <div class="num">KS L 1592</div>
         <div class="lbl">규격 기준 충족 제품</div>
       </div>
@@ -292,48 +353,48 @@
   <!-- ================= FEATURES ================= -->
   <section class="features" id="features">
     <div class="wrap">
-      <div class="section-head">
+      <div class="section-head reveal">
         <span class="eyebrow">Product</span>
         <h2>현장이 먼저 알아보는 성능</h2>
         <p>욕실·화장실 등 상시 습식 환경에 맞춰 설계된 전용 시멘트로, 필요한 항목을 꼼꼼히 검증했습니다.</p>
       </div>
       <div class="feature-grid">
-        <div class="feature-card">
+        <div class="feature-card reveal">
           <div class="feature-icon">
             <svg viewBox="0 0 24 24" fill="none"><rect x="3" y="3" width="8" height="8" rx="1" stroke="#1E4FA0" stroke-width="1.6"/><rect x="13" y="3" width="8" height="8" rx="1" stroke="#1E4FA0" stroke-width="1.6"/><rect x="3" y="13" width="8" height="8" rx="1" stroke="#1E4FA0" stroke-width="1.6"/><rect x="13" y="13" width="8" height="8" rx="1" stroke="#1E4FA0" stroke-width="1.6"/></svg>
           </div>
           <h3>강력한 타일 접착력</h3>
           <p>탄탄한 부착 성능으로 타일 탈락과 들뜸을 줄입니다.</p>
         </div>
-        <div class="feature-card">
+        <div class="feature-card reveal">
           <div class="feature-icon">
             <svg viewBox="0 0 24 24" fill="none"><path d="M12 3C12 3 6 10.5 6 14.5C6 17.8 8.7 20.5 12 20.5C15.3 20.5 18 17.8 18 14.5C18 10.5 12 3 12 3Z" stroke="#1E4FA0" stroke-width="1.6" stroke-linejoin="round"/></svg>
           </div>
           <h3>우수한 방수 성능</h3>
           <p>낮은 흡수율로 습기 침투와 곰팡이 발생을 최소화합니다.</p>
         </div>
-        <div class="feature-card">
+        <div class="feature-card reveal">
           <div class="feature-icon">
             <svg viewBox="0 0 24 24" fill="none"><rect x="3" y="8" width="18" height="8" rx="1.5" stroke="#1E4FA0" stroke-width="1.6"/><path d="M8 8v8M12 8v8M16 8v8" stroke="#1E4FA0" stroke-width="1.6"/></svg>
           </div>
           <h3>낮은 균열 위험</h3>
           <p>온·습도 변화에도 안정적인 길이변화율로 미세균열을 줄입니다.</p>
         </div>
-        <div class="feature-card">
+        <div class="feature-card reveal">
           <div class="feature-icon">
             <svg viewBox="0 0 24 24" fill="none"><path d="M3 12 Q7 6 11 12 T19 12" stroke="#1E4FA0" stroke-width="1.8" fill="none" stroke-linecap="round"/></svg>
           </div>
           <h3>뛰어난 시공성</h3>
           <p>우수한 보수율로 안정적인 경화 시간을 확보합니다.</p>
         </div>
-        <div class="feature-card">
+        <div class="feature-card reveal">
           <div class="feature-icon">
             <svg viewBox="0 0 24 24" fill="none"><circle cx="12" cy="12" r="9" stroke="#1E4FA0" stroke-width="1.6"/><path d="M8 12l2.5 2.5L16 9" stroke="#1E4FA0" stroke-width="1.8" fill="none" stroke-linecap="round" stroke-linejoin="round"/></svg>
           </div>
           <h3>KS 규격 기준 충족</h3>
           <p>KS L 1592:2024 기준에 맞춰 생산합니다.</p>
         </div>
-        <div class="feature-card">
+        <div class="feature-card reveal">
           <div class="feature-icon">
             <svg viewBox="0 0 24 24" fill="none"><rect x="2" y="9" width="12" height="7" rx="1" stroke="#1E4FA0" stroke-width="1.6"/><path d="M14 11h4l3 3v2h-7v-5Z" stroke="#1E4FA0" stroke-width="1.6" stroke-linejoin="round"/><circle cx="7" cy="17" r="2" stroke="#1E4FA0" stroke-width="1.6"/><circle cx="17" cy="17" r="2" stroke="#1E4FA0" stroke-width="1.6"/></svg>
           </div>
@@ -347,28 +408,28 @@
   <!-- ================= PARTNERS ================= -->
   <section class="partners" id="partners">
     <div class="wrap">
-      <div class="section-head">
+      <div class="section-head reveal">
         <span class="eyebrow">Track record</span>
         <h2>전국 500개 이상 현장이 선택했습니다</h2>
         <p>국내 주요 건설사의 아파트·오피스텔·공공시설 현장에 공급하고 있습니다.</p>
       </div>
       <div class="partner-grid">
-        <span class="partner-chip">GS건설</span>
-        <span class="partner-chip">현대건설</span>
-        <span class="partner-chip">대우건설</span>
-        <span class="partner-chip">롯데건설</span>
-        <span class="partner-chip">DL이앤씨</span>
-        <span class="partner-chip">포스코이앤씨</span>
-        <span class="partner-chip">SK건설</span>
-        <span class="partner-chip">한화건설</span>
-        <span class="partner-chip">코오롱글로벌</span>
-        <span class="partner-chip">호반건설</span>
-        <span class="partner-chip">두산건설</span>
-        <span class="partner-chip">금호건설</span>
-        <span class="partner-chip">현대산업개발</span>
-        <span class="partner-chip">계룡건설</span>
-        <span class="partner-chip">우미건설</span>
-        <span class="partner-chip">그 외 다수</span>
+        <span class="partner-chip reveal">GS건설</span>
+        <span class="partner-chip reveal">현대건설</span>
+        <span class="partner-chip reveal">대우건설</span>
+        <span class="partner-chip reveal">롯데건설</span>
+        <span class="partner-chip reveal">DL이앤씨</span>
+        <span class="partner-chip reveal">포스코이앤씨</span>
+        <span class="partner-chip reveal">SK건설</span>
+        <span class="partner-chip reveal">한화건설</span>
+        <span class="partner-chip reveal">코오롱글로벌</span>
+        <span class="partner-chip reveal">호반건설</span>
+        <span class="partner-chip reveal">두산건설</span>
+        <span class="partner-chip reveal">금호건설</span>
+        <span class="partner-chip reveal">현대산업개발</span>
+        <span class="partner-chip reveal">계룡건설</span>
+        <span class="partner-chip reveal">우미건설</span>
+        <span class="partner-chip reveal">그 외 다수</span>
       </div>
     </div>
   </section>
@@ -376,12 +437,12 @@
   <!-- ================= FAQ ================= -->
   <section class="faq" id="faq">
     <div class="wrap">
-      <div class="section-head">
+      <div class="section-head reveal">
         <span class="eyebrow">FAQ</span>
         <h2>자주 묻는 질문</h2>
         <p>거래를 검토 중이신 담당자분들이 많이 문의하시는 내용을 정리했습니다.</p>
       </div>
-      <div class="faq-list">
+      <div class="faq-list reveal">
         <div class="faq-item open">
           <button class="faq-q">
             <span>최소 주문 수량(MOQ)과 배송비는 어떻게 되나요?</span>
@@ -461,7 +522,7 @@
   <!-- ================= CTA ================= -->
   <section id="cta" style="padding-top:0;">
     <div class="cta">
-      <div class="cta-inner">
+      <div class="cta-inner reveal">
         <h2>현장에 맞는 견적을 안내해 드립니다</h2>
         <p>현장명과 필요 수량만 남겨주시면 담당자가 빠르게 연락드립니다.</p>
         <div class="cta-actions">
@@ -526,6 +587,58 @@
       if (!isOpen) item.classList.add('open');
     });
   });
+
+  // Scroll reveal (respects prefers-reduced-motion via CSS)
+  const revealGroups = [document.querySelectorAll('.stat-item'), document.querySelectorAll('.feature-card'), document.querySelectorAll('.partner-chip')];
+  revealGroups.forEach(group => {
+    group.forEach((el, i) => { el.style.transitionDelay = Math.min(i * 90, 540) + 'ms'; });
+  });
+  const revealObserver = new IntersectionObserver((entries) => {
+    entries.forEach(entry => {
+      if (entry.isIntersecting) {
+        entry.target.classList.add('in');
+        revealObserver.unobserve(entry.target);
+      }
+    });
+  }, { threshold: 0.15 });
+  document.querySelectorAll('.reveal').forEach(el => revealObserver.observe(el));
+
+  // Intro splash — plays once per browser session, then reveals the hero
+  (function(){
+    const intro = document.getElementById('introScreen');
+    const hero = document.querySelector('.hero');
+    if (!intro || !hero) return;
+    const reduceMotion = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+    let seen = false;
+    try { seen = sessionStorage.getItem('rihanIntroSeen') === '1'; } catch (e) {}
+
+    if (seen || reduceMotion) {
+      intro.style.display = 'none';
+      requestAnimationFrame(() => hero.classList.add('in'));
+      return;
+    }
+
+    document.body.classList.add('intro-lock');
+    let dismissed = false;
+    const dismiss = () => {
+      if (dismissed) return;
+      dismissed = true;
+      intro.classList.add('hide');
+      document.body.classList.remove('intro-lock');
+      hero.classList.add('in');
+      try { sessionStorage.setItem('rihanIntroSeen', '1'); } catch (e) {}
+      window.removeEventListener('wheel', dismiss);
+      window.removeEventListener('touchmove', dismiss);
+      window.removeEventListener('keydown', dismiss);
+      intro.removeEventListener('click', dismiss);
+      clearTimeout(autoTimer);
+    };
+    window.addEventListener('wheel', dismiss, { passive: true });
+    window.addEventListener('touchmove', dismiss, { passive: true });
+    window.addEventListener('keydown', dismiss);
+    intro.addEventListener('click', dismiss);
+    const autoTimer = setTimeout(dismiss, 4000);
+  })();
 </script>
 
 </body>
