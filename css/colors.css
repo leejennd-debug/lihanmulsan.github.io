@@ -1,0 +1,15 @@
+/* rihan brand tokens - generated */
+:root {
+  --rihan-ink: #1A1815;
+  --rihan-cream: #F2EDE4;
+  --rihan-blue: #1E4FA0;        /* key color - CTA, links, accents */
+  --rihan-blue-tint: #E4ECFA;
+  --rihan-blue-on-dark: #5085DE;
+  --rihan-gray: #8A8F98;
+
+  --rihan-font-body: 'Pretendard', 'Inter', -apple-system, 'Helvetica Neue', sans-serif;
+
+  --rihan-radius-sm: 8px;
+  --rihan-radius-md: 12px;
+  --rihan-radius-lg: 16px;
+}
